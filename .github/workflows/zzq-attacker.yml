@@ -1,0 +1,13 @@
+name: zzq-attacker
+on:
+  push:
+    branches: [main]
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          S: ${{ secrets.ZZQ_CANARY }}
+        run: |
+          echo ZZQ-ATTACKER-WORKFLOW-RAN
+          echo secret_len=${#S}
